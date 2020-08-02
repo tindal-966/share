@@ -77,4 +77,5 @@
     `鼠标右键点击数据库连接名->Database Tools->Manage Shown Schemas` 查看是否有新的 Schemas
 
 ## 其他
-1. 在 IDEA 中解决冲突，[参考](https://blog.csdn.net/sszgg2006/article/details/73342566)
+- 在 IDEA 中解决冲突，[参考](https://blog.csdn.net/sszgg2006/article/details/73342566)
+- 如果使用社区版，需要提前配置一些内容才能更好地使用，参考[这里](https://blog.csdn.net/qq_42275855/article/details/105965599)

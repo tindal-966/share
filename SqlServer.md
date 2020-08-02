@@ -1,5 +1,6 @@
-## SQL Server 数据库
+# SQL Server 数据库
 
+## 零零散散
 ### 如果表名或者字段名为 SQL Server 的保留字，需要加上方括号 `[]`
 
 ### Sql 中为 varchar 字段执行增删改查时要加单引号 `'`

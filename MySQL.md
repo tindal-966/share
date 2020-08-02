@@ -72,3 +72,7 @@ select @outname;
 
 > 解释：需要声明一个变量来保存 out 的结果，需要显示的话还需要再额外选择一次
 
+### 查看某个表的字段和注释
+``` sql
+select COLUMN_NAME,COLUMN_COMMENT from information_schema.COLUMNS where table_name = 'table_name';
+```

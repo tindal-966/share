@@ -136,6 +136,9 @@
     - 合并提交。它允许你把多个提交记录合并成一个
     > 具体应用可以参考 [重写历史](#重写历史)
 ##### 2.3.3 cherry-pick
+
+@todo, 根据这里 http://www.ruanyifeng.com/blog/2020/04/git-cherry-pick.html 完善一下内容
+
 ` git cherry-pick <提交号>... `
 可以用于将其他分支的提交复制到当前分支（其中，提交号可以为任意数量，使用空格隔开）
 使用场景：在功能分支或 bug 分支中提交了很多提交，但只需要将最后一个提交合并到主分支
@@ -231,10 +234,10 @@ Stashing 可以获取工作目录的中间状态，包括修改过的被追踪�
     
     > ` ^ ` 后面可以加数字，构成` ^[num] `，但和` ~[num] `意义不同（num 从 1 开始，不是从 0）
     >
-    > 主要应用在一个提交记录有多个父提交记录（例如，使用 merge 之后就会出现这种情况），指定移动到哪个父提交记录的场景，或者使用` git diff `对比不同提交记录中的同一记录
+    > `^[num]` 主要应用在一个提交记录有多个父提交记录时（例如，使用 merge 之后就会出现这种情况），指定移动到哪个父提交记录的场景，或者使用` git diff `对比不同提交记录中的同一记录
 - ` git checkout HEAD~[num] `HEAD 向上移动 num 个提交记录，不加` [num] `即 num=1
 
-综合应用例子：
+**综合应用例子：**
 ` git checkout HEAD~^2~2` 1.向上移动一个提交记录 2.选第二个父提交记录向上 3.向上移动两个提交记录
 #### 5.2 查看分支间差异的提交记录
 - ` git log master..aBranch `两点语法
@@ -276,9 +279,9 @@ tag 表示的是离 ref 最近的标签， numCommits 是表示这个 ref 与 ta
     执行` git commit --amend `，在弹出的文本编辑器修改提交说明，保存即覆盖原来的提交说明
 2. 修改最近一次提交的快照（即增、删、改快照中的文件）
     先增、删、改文件，再添加到暂存区，再执行` git commit --amend `，进入编辑器后如果不需要修改的话直接退出即可
-> 注意：使用该命令必须小心，因为修正会改变提交的 SHA-1 值，类似于一次 rebase，所以**不要在你最近一次提交被推送后还去修正它**
+> 注意：使用该命令必须小心，因为修正会改变提交的 SHA-1 值，类似于一次 rebase，所以**不要在你最近一次提交推送 push 后还去修正它**
 
-    @Q，待测试，未确定。
+    @Q，待测试，未确定(注意：git commit -m 'update' 这句是指第一次提交，在这次提交后发现需要改变这次提交)
     - 场景一：漏了文件 readme.md（如果连提交信息都要修改的话将` --no-edit `修改为场景二类似即可）
         ``` shell
         $ git commit -m 'update'
@@ -422,6 +425,30 @@ Git 会自动把所有已经跟踪过的文件暂存起来一并提交，从而�
 #### 9.5 git rm --cached <fileName>
 把文件从 Git 仓库中删除（亦即从暂存区域移除），但仍然希望保留在当前工作目录中（即从跟踪清单中删除）
 > 类似于将文件加入到 .gitignore ？（@Q）
+#### 9.6 `git log`
+一般图形化界面都提供了比较合适的 `git log` 界面，所以在此只作为记录
+
+- `git log --oneline` 一行显示
+    > 会比 `git log --pretty=oneline` 更清晰，因为 commit 标识比较短
+- `git log --after="2020-15-05" --before="2020-25-05"` 按时间筛选
+
+    可以使用 `yesterday, today, 10 day ago, 1 week ago, 2 week ago, 2 month go` 这些表示时间
+- `git log --author="authorName"` 按作者名筛选
+    > 支持模糊搜索，不过大小写敏感。可以使用 `-i` 指定大小写不敏感
+- `git log --grep="logMessage"` 按 log 消息筛选（支持正则表达式）
+    > 支持模糊搜索，不过大小写敏感。可以使用 `-i` 指定大小写不敏感
+- `git log file1.extension [file2.extensino...]` 按文件筛选
+    > 一个实际应用：`git log -i --grep="fix" main.rb search.rb` 筛选出对 main.rb search.rb 进行 fix 的那个记录（不过需要提交消息遵守一定的规范才有意义）
+- `git log -S "content"` 按提交内容来筛选
+    > 内容一定要跟在 `-S` 之后，否则无法识别命令
+- `git log -p` 显示每个 commit 的 diff 信息，相当于对每个 commit 进行了一次 `git diff`
+    > 可以在上面筛选的命令中加入 `-p` 命令以显示具体的内容
+- `git log --merges` 显示 mergs 的提交
+- `git log master..otherBranch` 显示 otherBranch 有但 master 分支没有的 commit
+    > 更多的参考 5.查看提交
+- `git log --pretty=format:"%Cred%an - %ar%n %Cblue %h -%Cgreen %s %n"` 自定义显示格式
+    > 其中，`%Cxxx` 为颜色，例如，`%Cred` 为红色；`%an` 为作者；`%ar` 作者时间；`%n` 换行；`%h` commit hash；`%s` subject，即提交信息。更多可以使用 `git log --help` 的 PRETTY FORMATS 章节查看
+
 
 
 ## Github
