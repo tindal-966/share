@@ -36,3 +36,59 @@
 - 不放过任何Warning/异常：写出无Warning的代码，包括编译的Warning和各种检查工具的Warning；合理打印Warning日志。
 - 善用搜索：能够从国内/外站中搜索问题。
 - 记笔记：将每一个问题的追查过程记录下来，定期回顾与分享。
+
+## 换源这件事（for Linux）
+### 国内 Mirrors 站点
+- [清华大学开源软件镜像站](https://mirrors.tuna.tsinghua.edu.cn/) 
+
+    所有的收录的源都有 [使用说明](https://mirrors.tuna.tsinghua.edu.cn/help/AOSP/)
+- [阿里云开源镜像站](https://developer.aliyun.com/mirror/)
+- [腾讯软件源](https://mirrors.cloud.tencent.com/) 
+    
+    少数收录的源有使用说明
+
+### Maven
+`settings.xml` Mirrors 段添加以下内容，建议修改 `~/.m2/settings.xml`
+``` xml
+<mirror>
+    <id>aliyunmaven</id>
+    <mirrorOf>*</mirrorOf> <!-- 使用 * 需要 Maven 2.0.5+ -->
+    <name>阿里云公共仓库</name>
+    <url>https://maven.aliyun.com/repository/public</url>
+</mirror>
+```
+
+[阿里云在线包搜索](https://developer.aliyun.com/mvn/search)
+
+参考：
+- [Introduction to Repositories](https://maven.apache.org/guides/introduction/introduction-to-repositories.html)
+- [Using Mirrors for Repositories](https://maven.apache.org/guides/mini/guide-mirror-settings.html)
+- [Best Practice - Using a Repository Manager](https://maven.apache.org/repository-management.html)
+
+### pip
+- 设为默认 `pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple` 要求 **pip >= 10.0.0**
+
+    非 root 用户使用 `pip config set` 会创建/修改 `~/.config/pip/pip.conf` 文件
+- 临时使用 `pip install <package> -i https://pypi.tuna.tsinghua.edu.cn/simple`
+
+参考：
+- [https://pip.pypa.io/en/stable/cli/pip_config/#description](https://pip.pypa.io/en/stable/cli/pip_config/#description) 
+- [https://pip.pypa.io/en/stable/topics/configuration/#naming](https://pip.pypa.io/en/stable/topics/configuration/#naming)
+- [Using a Proxy Server](https://pip.pypa.io/en/stable/user_guide/#using-a-proxy-server)
+
+### pacman for Manjaro
+- 命令行 `sudo pacman-mirrors -c China -g` （建议先备份 `/etc/pacman.d/mirrorlist` 文件） 
+    
+    会根据 `-c` 指定的国家获取 mirrorlist 并自动修改 `/etc/pacman.d/mirrorlist` 里面的所有内容
+- 通过应用 *Add/Remove Software* 设置 `Preferences -> General -> Use mirror from -> 选择 China 即可` 
+
+### Docker registry
+> 貌似官方的速度可以，实在不行再考虑修改
+
+1. 新建或者修改 `/etc/docker/daemon.json` 添加一下内容
+    ``` json
+    {
+    "registry-mirrors": ["https://docker.mirrors.ustc.edu.cn/"]
+    }
+    ```
+2. 执行 `sudo systemctl restart docker` 重启 docker 服务
