@@ -11,3 +11,4 @@
 ## Projects 项目
 - [ ] [mybatis/mybatis-3](https://github.com/mybatis/mybatis-3)
 - [ ] [google/guava](https://github.com/google/guava)
+- [ ] [spring-projects/spring-petclinic](https://github.com/spring-projects/spring-petclinic)
