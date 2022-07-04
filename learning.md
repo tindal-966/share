@@ -7,6 +7,9 @@
 - [ ] [深入浅出现代 Web 编程-全栈公开课 20xx](https://fullstackopen.com/en/)
 
     React & NodeJS
+- [ ] [南京大学 计算机科学与技术系 计算机系统基础 课程实验](https://nju-projectn.github.io/ics-pa-gitbook/) & [GitHub](https://github.com/NJU-ProjectN/ics-pa-gitbook)
+
+    C 模仿 QEMU 实现 NEMU (NJU EMUlator)
 
 ## Projects 项目
 - [ ] [mybatis/mybatis-3](https://github.com/mybatis/mybatis-3)
