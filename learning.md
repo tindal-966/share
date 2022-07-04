@@ -10,6 +10,7 @@
 - [ ] [南京大学 计算机科学与技术系 计算机系统基础 课程实验](https://nju-projectn.github.io/ics-pa-gitbook/) & [GitHub](https://github.com/NJU-ProjectN/ics-pa-gitbook)
 
     C 模仿 QEMU 实现 NEMU (NJU EMUlator)
+- [ ] [当我有服务器时我做了什么 · 个人服务器运维指南](https://shanyue.tech/op/) & [GitHub](https://github.com/shfshanyue/op-note)
 
 ## Projects 项目
 - [ ] [mybatis/mybatis-3](https://github.com/mybatis/mybatis-3)
