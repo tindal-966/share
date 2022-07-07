@@ -3,7 +3,7 @@
 - [ ] [《凤凰架构-构建可靠的大型分布式系统》](https://github.com/fenixsoft/awesome-fenix)
 
 ## Tutorials 教程
-- [ ] [前端部署十五章](https://q.shanyue.tech/deploy/) & [GitHub](https://github.com/shfshanyue/Daily-Question)
+- [x] [前端部署十五章](https://q.shanyue.tech/deploy/) & [GitHub](https://github.com/shfshanyue/Daily-Question)
 - [ ] [深入浅出现代 Web 编程-全栈公开课 20xx](https://fullstackopen.com/en/)
 
     React & NodeJS
