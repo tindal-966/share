@@ -58,12 +58,12 @@
 </mirror>
 ```
 
-[阿里云在线包搜索](https://developer.aliyun.com/mvn/search)
-
 参考：
 - [Introduction to Repositories](https://maven.apache.org/guides/introduction/introduction-to-repositories.html)
 - [Using Mirrors for Repositories](https://maven.apache.org/guides/mini/guide-mirror-settings.html)
 - [Best Practice - Using a Repository Manager](https://maven.apache.org/repository-management.html)
+
+> [阿里云在线包搜索](https://developer.aliyun.com/mvn/search)
 
 ### pip
 - 设为默认 `pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple` 要求 **pip >= 10.0.0**
@@ -76,11 +76,14 @@
 - [https://pip.pypa.io/en/stable/topics/configuration/#naming](https://pip.pypa.io/en/stable/topics/configuration/#naming)
 - [Using a Proxy Server](https://pip.pypa.io/en/stable/user_guide/#using-a-proxy-server)
 
-### pacman for Manjaro
+### pacman for Manjaro Linux
 - 命令行 `sudo pacman-mirrors -c China -g` （建议先备份 `/etc/pacman.d/mirrorlist` 文件） 
     
     会根据 `-c` 指定的国家获取 mirrorlist 并自动修改 `/etc/pacman.d/mirrorlist` 里面的所有内容
 - 通过应用 *Add/Remove Software* 设置 `Preferences -> General -> Use mirror from -> 选择 China 即可` 
+
+参考：
+- [man pacman-mirrors](https://wiki.manjaro.org/index.php/Pacman-mirrors/zh-cn)
 
 ### Docker registry
 > 貌似官方的速度可以，实在不行再考虑修改
@@ -92,3 +95,10 @@
     }
     ```
 2. 执行 `sudo systemctl restart docker` 重启 docker 服务
+
+### Alpine Linux
+- `sed -i 's/dl-cdn.alpinelinux.org/mirrors.tuna.tsinghua.edu.cn/g' /etc/apk/repositories`
+
+
+参考：
+- [清华大学开源软件镜像站-使用说明](https://mirrors.tuna.tsinghua.edu.cn/help/alpine/)
