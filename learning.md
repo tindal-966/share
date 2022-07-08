@@ -17,3 +17,5 @@
 - [ ] [mybatis/mybatis-3](https://github.com/mybatis/mybatis-3)
 - [ ] [google/guava](https://github.com/google/guava)
 - [ ] [spring-projects/spring-petclinic](https://github.com/spring-projects/spring-petclinic)
+    
+    [performance 优化教程](https://blog.ippon.fr/2013/03/11/improving-the-performance-of-the-spring-petclinic-sample-application-part-1-of-5/) & [Github](https://github.com/jdubois/spring-petclinic) & [发现](https://www.iteye.com/blog/xpenxpen-2146465)
