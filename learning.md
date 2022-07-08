@@ -1,6 +1,7 @@
 ## Books 书籍
-- [x] [《设计数据密集型应用》](https://github.com/Vonng/DDIA) 非官方中文翻译版
-- [ ] [《凤凰架构-构建可靠的大型分布式系统》](https://github.com/fenixsoft/awesome-fenix)
+- [x] [设计数据密集型应用](https://github.com/Vonng/DDIA) 非官方中文翻译版
+- [ ] [凤凰架构-构建可靠的大型分布式系统](https://github.com/fenixsoft/awesome-fenix)
+- [ ] [谷歌的软件工程](https://qiangmzsx.github.io/Software-Engineering-at-Google/#/) 非官方中文翻译
 
 ## Tutorials 教程
 - [x] [前端部署十五章](https://q.shanyue.tech/deploy/) & [GitHub](https://github.com/shfshanyue/Daily-Question)
