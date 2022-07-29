@@ -12,6 +12,11 @@
 
     C 模仿 QEMU 实现 NEMU (NJU EMUlator)
 - [ ] [当我有服务器时我做了什么 · 个人服务器运维指南](https://shanyue.tech/op/) & [GitHub](https://github.com/shfshanyue/op-note)
+- [ ] [React 技术揭秘](https://react.iamkasong.com/) & [GitHub](https://github.com/BetaSu/just-react) 
+
+    React 源码分析
+- [ ] [Writing An Interpreter In Go & Writing A Compiler In Go](https://thorstenball.com/books/) 
+    > 网络有书本资源，还有别人学习的 [实现](https://github.com/vbrazo/writing-an-interpreter-in-go)
 
 ## Projects 项目
 - [ ] [mybatis/mybatis-3](https://github.com/mybatis/mybatis-3)
