@@ -3,6 +3,8 @@
 - [The Most Important Performance Management Rule For Software Engineers](https://staysaasy.com/startups/2022/04/03/performance-management.html)
 - [7 Reasons Your Growth Startup Is Hiring Too Junior](https://staysaasy.com/management/2020/09/11/Hiring-Too-Junior.html)
 - [Professional Programming: The First 10 Years](https://thorstenball.com/blog/2022/05/17/professional-programming-the-first-10-years/)
+- [Metrics, tracing, and logging](https://peter.bourgon.org/blog/2017/02/21/metrics-tracing-and-logging.html)
+    > [OpenTelemetry](https://opentelemetry.io/)
 
 ### note
 - Manjaro 配置
@@ -31,3 +33,5 @@
     - 高亮操作，为选中的内容添加 `<div class="highlight">高亮内容</div>`
     - 笔记操作，为选中的内容添加 `<div class="note">笔记内容</div>`
     - 高亮+笔记（即批注）操作，为选中的内容添加 `<div calss="highlight"><div class="note">笔记内容</div>高亮内容</div>`
+- K8s 集群打包方案 https://github.com/fanux
+- [confd](https://github.com/kelseyhightower/confd) 操作系统级别的配置中心（类似微服务的配置中心）
