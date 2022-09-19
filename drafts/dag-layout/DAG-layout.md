@@ -11,24 +11,27 @@
 ## 应用场景
 - 流程图的展示
 
-## 网格布局 的简单实现
+## 一种简单的基于二维数组定位布局的实现
 ### 思路
-- 节点的位置和连线分开处理
+- 节点的位置和线分开处理。着重节点的排列，不考虑线的交叉
 - 节点间连线一般由前端通过 `[preNodeId, nextNodeId]` 这样的结构就可以实现，这里不做介绍
 - **将节点映射到二维数组中**
     - 从左到右，从上到下
     - 二维数组 row.size = column.size = node.size（极限情况：全都是头节点；没有分支的连续流程）
-- 找到无后续节点的头节点，逐个绘制
+- 找到头节点（无后续节点），逐个绘制
 - 迭代实现，迭代返回后续 **节点块** 所占据的 row 高度
 ### Pros&Cons
 Pros:
 - 实现简单
 
 Cons:
-- 屏幕空间利用率低
+- 屏幕空间利用率低（可压缩，未实现）
 - 可能会存在复杂的线交叉情况
-### 实现
-JavaScript Demo
+### JavaScript 实现
+需要显示的流程图如下所示（第一个部分左下角给出一个二维数组的展示）：
+
+![flow](./assets/flow.png)
+
 ```js
 /**
  * Node 节点
@@ -51,7 +54,16 @@ class Node {
 }
 
 /**
- * 核心算法
+ * 核心算法：
+ * - nodeList, 用来 getNodeById，如果 Node 的 pre, next 直接是 Node 对象而不是 ID 可忽略
+ * - node, 当前 node
+ * - rowIndex, columnIndex 当前 node 应该所在的位置
+ * - 函数返回：当前 node 所有子节点按照逐行排列占据的高度（行数），例如：
+ *     - 16 无子节点，高度当成为 1
+ *     - 18 的子节点为 17，17 后面无子节点，所以高度也为 1
+ *     - 15 的子节点为 [16, 18]，所以高度为 2
+ *     - 19 的子节点有很多，看图而出高度为 5
+ *     需要在 迭代的返回阶段 累加出来
  */
 function iter(nodeList, node, rowIndex, columnIndex) {
     node.rowIndex = rowIndex;
@@ -85,7 +97,7 @@ while (count >= 0) {
     nodeMap[node.id] = node;
 }
 
-// 设置连线
+// 设置连线（根据流程图设置）
 setNext(nodeMap, 1, [0, 2])
 setNext(nodeMap, 2, [3, 4])
 setNext(nodeMap, 3, [5, 6, 7])
@@ -100,16 +112,16 @@ setNext(nodeMap, 20, [21, 22, 23])
 setNext(nodeMap, 21, [24])
 setNext(nodeMap, 23, [24])
 
-// 映射
-let startRow = 0;
+// 计算节点位置
+let startRowIndex = 0;
 let headNodes = findHeadNode(nodeList)
 for (let headNode of headNodes) {
-    startRow += iter(nodeList, headNode, startRow, 0)
+  startRowIndex += iter(nodeList, headNode, startRowIndex, 0)
 }
-
 
 // 结果显示
 show(nodeList)
+
 
 // 工具函数
 function findHeadNode(nodeList) {
