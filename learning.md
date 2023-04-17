@@ -1,6 +1,6 @@
 ## Books 书籍
 - [x] [设计数据密集型应用](https://github.com/Vonng/DDIA) 非官方中文翻译版
-- [ ] [凤凰架构-构建可靠的大型分布式系统](https://github.com/fenixsoft/awesome-fenix)
+- [x] [凤凰架构-构建可靠的大型分布式系统](https://github.com/fenixsoft/awesome-fenix)
 - [ ] [谷歌的软件工程](https://qiangmzsx.github.io/Software-Engineering-at-Google/#/) 非官方中文翻译
 
 ## Tutorials 教程
@@ -16,7 +16,7 @@
 
     React 源码分析
 - [ ] [Writing An Interpreter In Go & Writing A Compiler In Go](https://thorstenball.com/books/) 
-    > 网络有书本资源，还有别人学习的 [实现](https://github.com/vbrazo/writing-an-interpreter-in-go)
+    > 网络有书本资源，还有别人的 [实现](https://github.com/vbrazo/writing-an-interpreter-in-go)
 
 ## Projects 项目
 - [ ] [mybatis/mybatis-3](https://github.com/mybatis/mybatis-3)
@@ -24,3 +24,8 @@
 - [ ] [spring-projects/spring-petclinic](https://github.com/spring-projects/spring-petclinic)
     
     [performance 优化教程](https://blog.ippon.fr/2013/03/11/improving-the-performance-of-the-spring-petclinic-sample-application-part-1-of-5/) & [Github](https://github.com/jdubois/spring-petclinic) & [发现](https://www.iteye.com/blog/xpenxpen-2146465)
+- [ ] [ben-manes/caffeine](https://github.com/ben-manes/caffeine)
+
+    缓存库，基于 ConcurrentHashMap，[更多](https://segmentfault.com/a/1190000038665523)
+- [ ] [fenixsoft/monolithic_arch_springboot](https://github.com/fenixsoft/monolithic_arch_springboot) SpringBoot 项目（带有比较多的最佳实践）
+- [ ] [fenixsoft/microservice_arch_springcloud](https://github.com/fenixsoft/microservice_arch_springcloud) SpringCloud 项目（带有比较多的最佳实践）
