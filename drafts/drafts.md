@@ -35,3 +35,4 @@
     - 高亮+笔记（即批注）操作，为选中的内容添加 `<div calss="highlight"><div class="note">笔记内容</div>高亮内容</div>`
 - K8s 集群打包方案 https://github.com/fanux
 - [confd](https://github.com/kelseyhightower/confd) 操作系统级别的配置中心（类似微服务的配置中心）
+- [软件工程师在加入新团队时应问的 20 个问题](https://www.infoq.cn/article/QxJZ7yM4u0QudIsyGufz) 

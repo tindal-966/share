@@ -1,0 +1,15 @@
+- Aware
+    - ApplicationContextAware
+- Manager 管理器
+    - CacheManager
+- Abstract
+- Configuration
+- Configurer
+- Adapter
+- Template
+- Operations
+- Factory
+- ApplicationContext
+- Initializer 初始化器
+    - WebApplicationInitializer
+- Resolver 解析器
